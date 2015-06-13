@@ -6,21 +6,30 @@
 </head>
 <SCRIPT Language="Javascript" >
 var testAry = [ 1, 3, 5, 15, 30, 21, 24, 19, 17, 27, 750 ] ;
-function test( pAry ){
+var chkAry = [ chkGitHub, chkFizz, chkBuzz ] ;
+////////////////////////////////////////////////////////////
+function test( pAry, pChkAry ){
     for ( var ino = 0; ino < pAry.length; ino++ ){
-        var out, n ;
+        var out = "" ;
 
-        out = ( String(pAry[ino]).match(7) ? "github" : "" ) ;
-        n = pAry[ino]%3 ;
-        out += ( 0 == n ? "fizz" : "" ) ;
-        n = pAry[ino]%5 ;
-        out += ( 0 == n ? "buzz" : "" ) ;
+        for ( var c = 0; c < pChkAry.length; c++ ){
+            out += pChkAry[c]( pAry[ino] ) ;
+        }
         document.write( ( "" == out ? pAry[ino] : out ) + "<BR>" ) ;
-
     }
 }
+////////////////////////////////////////////////////////////
+function chkGitHub( p ){
+    return String(p).match(7) ? "github" : "" ;
+}
+function chkFizz( p ){
+    return 0 == parseInt(p,10)%3 ? "fizz" : "" ;
+}
+function chkBuzz( p ){
+    return 0 == parseInt(p,10)%5 ? "buzz" : "" ;
+}
 //TEST
-test( testAry ) ;
+test( testAry, chkAry ) ;
 </SCRIPT>
 <body>
 </body>
