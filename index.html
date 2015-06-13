@@ -5,18 +5,18 @@
 <title>index.html</title>
 </head>
 <SCRIPT Language="Javascript" >
-var testAry = [ 1, 3, 5, 15, 30, 21, 24, 19, 17 ] ;
+var testAry = [ 1, 3, 5, 15, 30, 21, 24, 19, 17, 27, 750 ] ;
 function test( pAry ){
     for ( var ino = 0; ino < pAry.length; ino++ ){
         var out, n ;
 
+        out = ( String(pAry[ino]).match("7") ? "github" : "" ) ;
         n = pAry[ino]%3 ;
-        out = ( 0 == n ? "Fizz" : "" ) ;
+        out += ( 0 == n ? "fizz" : "" ) ;
         n = pAry[ino]%5 ;
-        out += ( 0 == n ? "Buzz" : "" ) ;
-        out = ( String(pAry[ino]).match("7") ? "github" : out ) ;
-
+        out += ( 0 == n ? "buzz" : "" ) ;
         document.write( ( "" == out ? pAry[ino] : out ) + "<BR>" ) ;
+
     }
 }
 //TEST
