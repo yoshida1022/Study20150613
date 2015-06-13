@@ -14,6 +14,8 @@ function test( pAry ){
         out = ( 0 == n ? "Fizz" : "" ) ;
         n = pAry[ino]%5 ;
         out += ( 0 == n ? "Buzz" : "" ) ;
+        n = pAry[ino]%7 ;
+        out = ( 0 == n ? "github" : out ) ;
 
         document.write( ( "" == out ? pAry[ino] : out ) + "<BR>" ) ;
     }
