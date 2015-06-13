@@ -10,7 +10,7 @@ function test( pAry ){
     for ( var ino = 0; ino < pAry.length; ino++ ){
         var out, n ;
 
-        out = ( String(pAry[ino]).match("7") ? "github" : "" ) ;
+        out = ( String(pAry[ino]).match(7) ? "github" : "" ) ;
         n = pAry[ino]%3 ;
         out += ( 0 == n ? "fizz" : "" ) ;
         n = pAry[ino]%5 ;
